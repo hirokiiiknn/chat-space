@@ -1,0 +1,40 @@
+.main_chat 	
+  .main_chat__group-info
+    .group_name	
+      .group_name__group
+        test
+        .group_name__group--member
+          member :hiro
+      .group_name__edit
+        = link_to "#" do
+          Edit
+        
+      
+  .main_chat__message-list
+    .main_message
+      .main_message__name
+        hiro
+        .main_message__name--date
+          2019/11/20(Wed) 17:43:11
+      .main_message__content
+        おはよう！
+    .main_message2
+      .main_message2__name
+        hiro
+        .main_message2__name--date
+          2019/11/20(Wed) 17:43:34
+      .main_message2__content
+        今日は夜から雨が降る
+  
+  .main_chat__message-form
+    .bottom_form
+      .bottom_form__text
+        .bottom_form__text--area
+          %input{name: "text", placeholder: "type a message", class: "input-area"}
+          %label{class: "input-box__image"}
+            = icon('fas', 'image')
+            %input{type: "file", class: "input-file"}
+
+      .bottom_form__send
+        = link_to "#" do
+          Send
