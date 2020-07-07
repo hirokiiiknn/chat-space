@@ -5,7 +5,7 @@
         = current_user.name
       .top_items__icons
         .top_items__icons--icon
-          = link_to new_group_path do 
+          = link_to "#" do 
             = icon("far", "edit")
         .top_items__icons--icon
           = link_to edit_user_path(current_user) do
@@ -13,13 +13,9 @@
   .side_bar__group-list
     .group_side
       .group_side__name
-        - current_user.groups.each do |group|  #横の記述は現在サインインしているユーザーが所属しているグループ
-          .group_name
-            = link_to '#' do
-              .group_name__name
-                = group.name
-              .group_name__message
-                まだメッセージがありません
+        techcamp
+      .group_side__message
+        まだメッセージがありません
 
 
 

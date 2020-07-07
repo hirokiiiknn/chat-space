@@ -8,8 +8,8 @@
 |name|string|null: false|
 ### Association
 - has_many :messages
-- has_many :group_users
-- has_many :groups, through: :group_users
+- has_many :users_groups
+- has_many :groups, through: :users_groups
 
 
 ## groupsテーブル
@@ -18,10 +18,10 @@
 |name|string|null: false|
 ### Association
 - has_many :messages
-- has_many :group_users
-- has_many :users, through: :group＿users
+- has_many :users_groups
+- has_many  :users, through: :users_groups
 
-## group_usersテーブル
+## users_groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |users_id|integer|null: false, foreign_key: true|
