@@ -57,25 +57,29 @@
       color: white;
       .group_side{
         &__name {
-          font-size: 15px;
-          padding-bottom: 5px;
           .group_name {
             a,a:hover,a:visited {
               text-decoration: none;
             }
+            &__name{
+              font-size: 15px;
+              padding-bottom: 5px;
+            }
+            &__message {
+              font-size: 11px;
+            }
 
           }
-        }
-        &__message {
-          font-size: 11px;
         }
       }
     }
   }
 
   .main_chat{
+    overflow: scroll;
     width: calc(100vw - 300px);
     background: #ffffff;
+    position: relative;
     &__group-info{
       height: 100px;
       background: #eeeeee;
@@ -111,6 +115,7 @@
       height: calc(100vh - 190px);
       background: #fafafa;
       position: relative;
+      box-sizing:  border-box;
       .main_message{
         position: absolute;
         top: 35px;
@@ -126,75 +131,42 @@
         }
         
       }
-      .main_message2{
-        position: absolute;
-        top: 127px;
-        left: 40px;
-        &__name{
-          @include name;
-          &--date{
-            @include date;
-          }
-        }
-        &__content {
-          @include content;
-        }
-      }
 
     }
     &__message-form{
       height: 90px;
-      
       background: #d2d2d2;
-      a,a:hover,a:visited {
-        text-decoration: none;
-        
-      }
+      z-index: 9999;
+      position:  fixed;
+      width: calc(100% - 300px);
       .bottom_form{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 30px 40px 30px 40px;
-        
-        &__text {
-
-          display: flex;
-          align-items: center;
-          width:100%;
-          a,a:hover,a:visited {
-            color: black;
-            width:100%;
+        padding: 20px;
+        position: relative;
+        .input-area{
+          width: 100%;
+          padding: 10px;
+          
+        }
+        .input-box__image{
+          .input-file{
+            display: none;
           }
-          &--area{
-            width: 100%;
-            position: relative;
-
-            margin-right: 20px;
-            .input-area{
-              width: 100%;
-              padding: 10px;
-            }
-            .input-box__image{
-              position: absolute;
-              top: 10px;
-              right: 7px;
-              .input-file{
-                display: none;
-              }
-            }
-
+          .Form__icon{
+            position: absolute;
+            top: 35px;
+            right: 110px;
           }
         }
         &__send{
-          a,a:hover,a:visited {
-            
-            padding:15px 30px 15px 30px;
-            background-color: #38aef0;
-            color: #ffffff;
-            
-          }
+          background-color: #38aef0;
+          padding: 10px;
+          margin-left: 15px;
+          color: #fff;
+          box-shadow: 2px 2px 4px black;
         }
-        
       }
     }
   }
