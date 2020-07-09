@@ -114,22 +114,29 @@
     &__message-list{
       height: calc(100vh - 190px);
       background: #fafafa;
-      position: relative;
       box-sizing:  border-box;
-      .main_message{
-        position: absolute;
-        top: 35px;
-        left: 40px;
-        &__name{
-          @include name;
-          &--date{
+      overflow: scroll;
+      padding-top: 35px;
+      padding-left: 40px;
+      .main{
+        margin-bottom: 15px;;
+        .main_message{
+          display: flex;
+          &__name{
+            @include name;
+          }
+          &__date{
             @include date;
           }
         }
-        &__content {
-          @include content;
+        .Content {
+          &__content{
+            @include content;
+          }
+          .Message__image{
+            
+          }
         }
-        
       }
 
     }
@@ -137,7 +144,7 @@
       height: 90px;
       background: #d2d2d2;
       z-index: 9999;
-      position:  fixed;
+      position:fixed;
       width: calc(100% - 300px);
       .bottom_form{
         display: flex;
