@@ -15,11 +15,11 @@
       .group_side__name
         - current_user.groups.each do |group|  #横の記述は現在サインインしているユーザーが所属しているグループ
           .group_name
-            = link_to '#' do
+            = link_to group_messages_path(group) do
               .group_name__name
                 = group.name
               .group_name__message
-                まだメッセージがありません
+                = group.show_last_message
 
 
 
