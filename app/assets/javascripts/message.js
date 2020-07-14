@@ -54,10 +54,8 @@ $(function(){
       contentType: false,
     })
     .done(function(data){
-      console.log(data)
       let html = buildHTML(data);
       $('.main_chat__message-list').append(html);
-      // $('#message_content').val('');
       $('Form')[0].reset();
       $('.main_chat__message-list').animate({ scrollTop: $('.main_chat__message-list')[0].scrollHeight});
       $('#commit').prop("disabled", false);
