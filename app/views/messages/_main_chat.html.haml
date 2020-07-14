@@ -17,11 +17,11 @@
   
   .main_chat__message-form
     = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
-      .bottom_form
+      .bottom_form 
         =f.text_field :content, class: "input-area", placeholder: 'type a message'
         =f.label :image, class: "input-box__image" do
           = icon('far', 'image', class: 'Form__icon')
           = f.file_field :image, class: "input-file"
-        = f.submit 'Send', class: 'bottom_form__send'
+        = f.submit 'Send', class: 'bottom_form__send', 'data-disable-with' => false 
 
 
